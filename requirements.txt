@@ -4,3 +4,5 @@ flask-cors
 python-dotenv
 psycopg2-binary
 openai
+gunicorn==20.1.0
+
