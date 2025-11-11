@@ -1,12 +1,16 @@
-﻿services:
+services:
   - type: web
-    name: vanna-ai
+    name: flowbit-vanna-ai
     env: python
     plan: free
+    rootDir: apps/vanna
     buildCommand: pip install -r requirements.txt
-    startCommand: python app.py
+    startCommand: gunicorn app:app
     envVars:
-      - key: VANNA_API_KEY
-        value: your_vanna_api_key_here
-      - key: DATABASE_URL
-        value: postgresql://admin:password@your-postgres-url.com:5432/analytics
+      - key: PYTHON_VERSION
+        value: 3.11.8
+      - key: FLASK_DEBUG
+        value: false
+      - key: PORT
+        value: 10000
+
