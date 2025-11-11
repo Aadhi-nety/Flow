@@ -1,0 +1,6 @@
+﻿vanna
+flask
+flask-cors
+python-dotenv
+psycopg2-binary
+openai

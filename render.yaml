@@ -1,0 +1,12 @@
+﻿services:
+  - type: web
+    name: vanna-ai
+    env: python
+    plan: free
+    buildCommand: pip install -r requirements.txt
+    startCommand: python app.py
+    envVars:
+      - key: VANNA_API_KEY
+        value: your_vanna_api_key_here
+      - key: DATABASE_URL
+        value: postgresql://admin:password@your-postgres-url.com:5432/analytics
