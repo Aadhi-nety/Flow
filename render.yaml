@@ -1,16 +1,11 @@
 services:
   - type: web
-    name: flowbit-vanna-ai
+    name: vanna-analytics-api
     env: python
-    plan: free
-    rootDir: apps/vanna
-    buildCommand: pip install -r requirements.txt
+    buildCommand: chmod +x build.sh && ./build.sh
     startCommand: gunicorn app:app
     envVars:
       - key: PYTHON_VERSION
-        value: 3.11.8
-      - key: FLASK_DEBUG
-        value: false
-      - key: PORT
-        value: 10000
+        value: 3.11.0
+
 
